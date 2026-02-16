@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,29 +17,19 @@
         }
         .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
     </style>
-    <!-- Shim process for browser-side execution -->
-    <script>
-        if (typeof window !== 'undefined') {
-            window.process = window.process || { env: { API_KEY: '' } };
-        }
-    </script>
-    <script type="importmap">
+<script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@19.0.0",
-    "react/": "https://esm.sh/react@19.0.0/",
-    "react-dom": "https://esm.sh/react-dom@19.0.0",
-    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "lucide-react": "https://esm.sh/lucide-react@0.475.0",
-    "@google/genai": "https://esm.sh/@google/genai@0.2.1",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.564.0"
   }
 }
 </script>
 </head>
 <body class="bg-gray-50 text-slate-800 font-sans h-screen overflow-hidden">
     <div id="root"></div>
-    <!-- Entry point for the application -->
-    <script type="module" src="./index.tsx"></script>
 </body>
 </html>

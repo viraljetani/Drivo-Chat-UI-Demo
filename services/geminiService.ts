@@ -1,18 +1,11 @@
+
 import { GoogleGenAI } from "@google/genai";
 import { Message } from "../types";
 
-// Safety check for environments where process.env might be missing during initial evaluation
-const getApiKey = () => {
-  try {
-    return process.env.API_KEY || '';
-  } catch (e) {
-    return '';
-  }
-};
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
 
 export const getAiReplySuggestion = async (history: Message[], userInput: string): Promise<string> => {
   try {
-    const ai = new GoogleGenAI({ apiKey: getApiKey() });
     const chatContext = history.map(m => `${m.sender}: ${m.content}`).join('\n');
     
     const response = await ai.models.generateContent({
